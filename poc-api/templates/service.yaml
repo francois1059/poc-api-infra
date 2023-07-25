@@ -7,9 +7,9 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.service.targetPort }}
+    - port: 3000
+      targetPort: 3000
       protocol: TCP
-      name: http
+      name: http-3000
   selector:
     {{- include "poc-api.selectorLabels" . | nindent 4 }}
