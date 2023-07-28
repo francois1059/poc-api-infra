@@ -55,6 +55,10 @@ spec:
           {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+      - name: nodejs-env-file
+        secret:
+          name: front-config
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -67,7 +71,3 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      volumes:
-      - name: nodejs-env-file
-        secret:
-          name: front-config
