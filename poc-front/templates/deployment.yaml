@@ -21,9 +21,9 @@ spec:
         {{- include "poc-api.selectorLabels" . | nindent 8 }}
     spec:
       volumes:
-        - name: nodejs-env-file
-          secret:
-            name: front-config
+      - name: nodejs-env-file
+        secret:
+          name: front-config
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
