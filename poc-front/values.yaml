@@ -5,14 +5,14 @@
 replicaCount: 1
 
 image:
-  repository: "europe-west9-docker.pkg.dev/synapps-sandbox/poc-app/poc-api"
+  repository: "europe-west9-docker.pkg.dev/synapps-sandbox/poc-front/poc-front"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.1"
+  tag: "1.0.0"
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "poc-api"
+fullnameOverride: "poc-front"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -47,7 +47,7 @@ securityContext: {}
 service:
   type: LoadBalancer
   port: 80
-  targetPort: 3000
+  targetPort: 80
 
 ingress:
   enabled: true
@@ -56,7 +56,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: todos-api.local
+    - host: todos.local
       paths:
         - path: /
           pathType: Prefix
