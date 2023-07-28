@@ -30,7 +30,7 @@ spec:
       volumes:
         - name: nodejs-env-file
           secret:
-            name: front-config
+            secretName: front-config
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
