@@ -29,8 +29,8 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
         - name: nodejs-env-file
-          secret:
-            secretName: front-config
+          configMap:
+            name: front-config
       containers:
         - name: {{ .Chart.Name }}
           securityContext:

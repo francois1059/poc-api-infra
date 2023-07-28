@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: front-config
+data:
+  .env.production: |
+    VITE_API_BASE_URL=http://trucdeouf:3000
+    VITE_API_TODOS_PATH=/todos
