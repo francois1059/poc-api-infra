@@ -41,6 +41,10 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          volumeMounts:
+            - name: nodejs-env-file
+              mountPath: /usr/share/nginx/html/assets/.env.production
+              readOnly: true
           {{- if .Values.probes.liveness.enabled }}
           livenessProbe:
             httpGet:
