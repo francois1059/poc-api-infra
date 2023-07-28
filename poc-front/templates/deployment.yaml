@@ -12,10 +12,6 @@ spec:
     matchLabels:
       {{- include "poc-api.selectorLabels" . | nindent 6 }}
   template:
-    volumes:
-      - name: nodejs-env-file
-        secret:
-          name: front-config
     metadata:
       {{- with .Values.podAnnotations }}
       annotations:
@@ -24,6 +20,10 @@ spec:
       labels:
         {{- include "poc-api.selectorLabels" . | nindent 8 }}
     spec:
+      volumes:
+        - name: nodejs-env-file
+          secret:
+            name: front-config
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
