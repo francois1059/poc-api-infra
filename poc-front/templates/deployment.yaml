@@ -67,7 +67,7 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-    volumes:
-    - name: nodejs-env-file
-      secret:
-        name: front-config
+      volumes:
+      - name: nodejs-env-file
+        secret:
+          name: front-config
