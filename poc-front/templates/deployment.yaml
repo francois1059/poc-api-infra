@@ -28,7 +28,7 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
-        - name: nodejs-env-file
+        - name: config-volume
           configMap:
             name: front-config
       containers:
@@ -42,9 +42,9 @@ spec:
               containerPort: {{ .Values.service.port }}
               protocol: TCP
           volumeMounts:
-            - name: nodejs-env-file
-              mountPath: /usr/share/nginx/html/.env.production
-              subPath: .env.production
+            - name: config-volume
+              mountPath: /usr/share/nginx/html/config.js
+              subPath: config.js
               readOnly: true
           {{- if .Values.probes.liveness.enabled }}
           livenessProbe:
