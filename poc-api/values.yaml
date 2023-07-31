@@ -10,6 +10,9 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: "1.0.2"
 
+appConfig:
+  port: 3000
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: "poc-api"
