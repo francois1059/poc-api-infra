@@ -28,10 +28,10 @@ serviceAccount:
 
 probes:
   liveness:
-    enabled: true
+    enabled: false
     path: "/health"
   readiness:
-    enabled: true
+    enabled: false
     path: "/health"
 
 podAnnotations: {}
