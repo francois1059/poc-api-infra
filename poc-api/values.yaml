@@ -7,7 +7,7 @@ image:
   repository: "europe-west9-docker.pkg.dev/synapps-sandbox/poc-app/poc-api"
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "{{ env.VERSION }}"
+  tag: "0.0.35"
 appConfig:
   port: 3000
 imagePullSecrets: []
