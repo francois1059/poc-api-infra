@@ -23,10 +23,10 @@ serviceAccount:
   name: ""
 probes:
   liveness:
-    enabled: false
+    enabled: true
     path: "/health"
   readiness:
-    enabled: false
+    enabled: true
     path: "/health"
 podAnnotations: {}
 podSecurityContext: {}
